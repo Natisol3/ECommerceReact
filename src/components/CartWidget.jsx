@@ -6,8 +6,8 @@ return (
 <>
     <div className='carrito'>
     <Button colorScheme='teal' size='xs'>
-    Button
     <span>10</span>
+    <img src="../src/assets/carrito.png" alt="carrito" class="carrito"></img>
     </Button>
     </div>
 </>    
