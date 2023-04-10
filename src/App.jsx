@@ -16,16 +16,20 @@ const App = () => {
   const sumar = () => {setContador(contador + 1);}
   return (
   <>
+    <BrowserRouter>
       <NavBar />
-
-    <ItemListContainer/>
+      <Routes>
+        <Route exact path="/productos" element={<ItemDetailContainer/>} />
+        <Route exact path="/item/:id" element={<ItemDetailContainer/>} />
+        <Route exact path="/CartWidget" element={<CartWidget />} />
+        
 
     <p>{contador}</p>
     <button onClick={sumar}>Sumar</button>
     <button onClick={()=>{setContador(contador - 1);}}>Restar</button>
     <button onClick={()=>{setContador(0);}}>Limpiar</button>
-
-    
+    </Routes>
+    </BrowserRouter>
   </>
 
   )

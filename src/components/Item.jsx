@@ -1,38 +1,38 @@
-import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
+import { CardBody, CardFooter, Heading, Text, Stack, Divider, Button, Image } from '@chakra-ui/react';
 import image from "../assets/piñata.png";
-import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Card = () => {
+const Item = ({productos}) => {
 return (
-        <Card maxW='sm'>
-<CardBody>
-    <Image
-    src= "../assets/piñata.png"
-    alt="piñata"
-    class= "piñata"
-    />
+    <div>
+        <div key={productos.id}>
+                <center p="1rem">
+                    
+                < CardBody >
+                <Image borderRadius="lg" src= "image"/>
     <Stack mt='6' spacing='3'>
-    <Heading size='md'>Piñata cumpleaños</Heading>
-    <Text>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore at eaque laborum quo corrupti nobis sunt, consequuntur eos quidem eligendi fuga dolorem, in laudantium, sequi quas aliquid distinctio iusto tempora.
+    <Heading size='md'>(producto.name)</Heading>
+    <Text color='pink.800' fontSize='xl'>
+        Productos : {productos}
+        </Text>
+    <Text color='blue.600' fontSize='xl'>
+        Stock : {productos.stock}
     </Text>
-    <Text color='blue.600' fontSize='2xl'>
-        $4100
+    <Text color='pink.600' fontSize='xl'>
+        Precio : $ {productos.precio}
     </Text>
     </Stack>
 </CardBody>
 <Divider />
 <CardFooter>
-    <ButtonGroup spacing='2'>
-    <Button variant='solid' colorScheme='blue'>
-        Buy now
+        <Button variant='solid' colorScheme='blue'>
+        <Link to={"/item/${id}"}>Details</Link>
     </Button>
-    <Button variant='ghost' colorScheme='blue'>
-        Add to cart
-    </Button>
-    </ButtonGroup>
+    
 </CardFooter>
-</Card>
+</center>
+</div>
+</div>
 )
 }
 
