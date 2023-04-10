@@ -1,14 +1,13 @@
-
-import { Card } from '@chakra-ui/react'
-
-import React from 'react'
+import { Card, CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
+import image from "../assets/piñata.png";
+import React from 'react';
 
 const Card = () => {
 return (
         <Card maxW='sm'>
 <CardBody>
     <Image
-    src= "../src/assets/piñata.png"
+    src= "../assets/piñata.png"
     alt="piñata"
     class= "piñata"
     />
