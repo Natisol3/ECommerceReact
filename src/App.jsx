@@ -5,7 +5,8 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import NavBar from './components/NavBar';
 import CartWidget from './components/CartWidget';
 import { useState } from 'react';
-
+import Cart from './components/Cart';
+import ShoppingCartContextProvider from './context/ShoppingCartContext';
 
 
 
@@ -16,12 +17,13 @@ const App = () => {
   const sumar = () => {setContador(contador + 1);}
   return (
   <>
+    <ShoppingCartContextProvider>
     <BrowserRouter>
       <NavBar />
       <Routes>
         <Route exact path="/productos" element={<ItemDetailContainer/>} />
         <Route exact path="/item/:id" element={<ItemDetailContainer/>} />
-        <Route exact path="/CartWidget" element={<CartWidget />} />
+        <Route exact path="/Cart" element={<Cart/>} />
         
 
     <p>{contador}</p>
@@ -30,6 +32,7 @@ const App = () => {
     <button onClick={()=>{setContador(0);}}>Limpiar</button>
     </Routes>
     </BrowserRouter>
+    </ShoppingCartContextProvider>
   </>
 
   )
